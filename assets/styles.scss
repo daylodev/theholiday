@@ -1,0 +1,85 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+// mixin properties to be reused
+@mixin align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4em;
+    color: whitesmoke;
+
+    .parallax_wrapper {
+        // everything inside wrapper is 100 viewport window
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        // perspective is like angled distance from direct view
+        perspective: 300px;
+
+        .intro_screen {
+            height: 100vh;
+            background: tomato;
+
+            // here, the mixin property is being used
+            @include align-center();
+        }
+
+        .outro_screen {
+            height: 100vh;
+            background: seagreen;
+            @include align-center();
+        }
+
+        .parallax_group {
+            position: relative;
+            height: 100vh;
+            // when given depth, the element keeps its position
+            transform-style: preserve-3d;
+
+            .parallax_layer {
+                position: absolute;
+                // inset takes all four properties of top, right, left, bottom in one declaration
+                inset: 0;
+                @include align-center();
+            }
+
+            // base layer should not be put within the parallax layer, but at the same indentation
+            .base_layer {
+                left: -6px;
+                // scale calculation: 1 + (Z transform value * -1) / perspective)
+                transform: translateZ(-300px) scale(2);
+            }
+
+            .mid_layer {
+                transform: translateZ(0);
+            }
+
+            .top_layer {
+                transform: translateZ(210px) scale(0.3);
+            }
+        }
+
+        #intro {
+            z-index: 0;
+        }
+
+        #group_1 {
+            z-index: -1;
+        }
+
+        #group_1 > .base_layer {
+            background: crimson;
+        }
+
+        #group_2 > .mid_layer{
+            background: yellow;
+        }
+    }
+}
