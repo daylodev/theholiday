@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&family=Patua+One&family=Source+Sans+Pro&display=swap');
+
 * {
     scroll-behavior: smooth;
     margin: 0;
@@ -11,9 +13,11 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Patua One', cursive;
     font-size: 4em;
     color: whitesmoke;
+    background-image: url(../assets/images/logo.png);
+    background-size: cover;
 
     .parallax_wrapper {
         // everything inside wrapper is 100 viewport window
@@ -25,7 +29,8 @@ body {
 
         .intro_screen {
             height: 100vh;
-            background: tomato;
+            background:rgb(53, 205, 119);
+            border-bottom: crimson 2px ridge;
 
             // here, the mixin property is being used
             @include align-center();
@@ -33,7 +38,7 @@ body {
 
         .outro_screen {
             height: 100vh;
-            background: seagreen;
+            background: rgb(53, 205, 119);
             @include align-center();
         }
 
@@ -41,6 +46,7 @@ body {
             position: relative;
             height: 100vh;
             // when given depth, the element keeps its position
+            // 
             transform-style: preserve-3d;
 
             .parallax_layer {
@@ -57,8 +63,13 @@ body {
                 transform: translateZ(-300px) scale(2);
             }
 
+            .base_layer h2 {
+                color: gray;
+                @include align-center();
+            }
+
             .mid_layer {
-                transform: translateZ(0);
+                transform: translateZ(0) scale(1);
             }
 
             .top_layer {
@@ -75,11 +86,19 @@ body {
         }
 
         #group_1 > .base_layer {
-            background: crimson;
+            background: transparent;
         }
 
-        #group_2 > .mid_layer{
-            background: yellow;
+        #group_2 > .mid_layer {
+            background: transparent;
+            // background-image: url(../images/holtropic.png);
+            // background-size: cover;
         }
+
+        // #group_2 > .top_layer {
+        //     background-image: url(../images/source.gif);
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        // }
     }
 }

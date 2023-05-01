@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montez&family=Patua+One&family=Source+Sans+Pro&display=swap");
 * {
   scroll-behavior: smooth;
   margin: 0;
@@ -5,9 +6,11 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Patua One", cursive;
   font-size: 4em;
   color: whitesmoke;
+  background-image: url(../assets/images/logo.png);
+  background-size: cover;
 }
 body .parallax_wrapper {
   height: 100vh;
@@ -17,14 +20,15 @@ body .parallax_wrapper {
 }
 body .parallax_wrapper .intro_screen {
   height: 100vh;
-  background: tomato;
+  background: rgb(53, 205, 119);
+  border-bottom: crimson 2px ridge;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body .parallax_wrapper .outro_screen {
   height: 100vh;
-  background: seagreen;
+  background: rgb(53, 205, 119);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,8 +49,14 @@ body .parallax_wrapper .parallax_group .base_layer {
   left: -6px;
   transform: translateZ(-300px) scale(2);
 }
+body .parallax_wrapper .parallax_group .base_layer h2 {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body .parallax_wrapper .parallax_group .mid_layer {
-  transform: translateZ(0);
+  transform: translateZ(0) scale(1);
 }
 body .parallax_wrapper .parallax_group .top_layer {
   transform: translateZ(210px) scale(0.3);
@@ -58,8 +68,8 @@ body .parallax_wrapper #group_1 {
   z-index: -1;
 }
 body .parallax_wrapper #group_1 > .base_layer {
-  background: crimson;
+  background: transparent;
 }
 body .parallax_wrapper #group_2 > .mid_layer {
-  background: yellow;
+  background: transparent;
 }/*# sourceMappingURL=styles.css.map */
