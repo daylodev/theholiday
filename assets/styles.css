@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Sigmar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Bungee&family=Sigmar&display=swap");
 * {
   scroll-behavior: smooth;
   margin: 0;
@@ -12,6 +13,14 @@ body {
   background-color: #2c2f33;
   filter: blur(80%);
   animation: blur 2s both;
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+::selection {
+  background: transparent;
 }
 @keyframes blur {
   from {
@@ -29,22 +38,61 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+a:hover {
+  scale: 1.1;
+}
+
 .line {
   position: relative;
 }
 
 #title {
   position: absolute;
-  margin-right: -100px;
+  cursor: default;
+  top: 2vh;
+  left: 5em;
+  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+small {
+  position: absolute;
+  cursor: default;
+  color: whitesmoke;
+  top: 6em;
+  left: 15em;
+  text-decoration: none;
+  font-size: x-small;
+  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  transition: all 0.3s ease-in-out;
+}
+
+#subtitle {
+  position: absolute;
   text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
   word-spacing: 4px;
-  font-size: xx-large;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#example {
+  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  word-spacing: 4px;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #mvp {
   position: inherit;
   top: 24vh;
-  left: -20vw;
+  left: -16em;
   scale: 0.3;
 }
 
@@ -56,12 +104,8 @@ a {
   align-items: center;
 }
 .parallax_wrapper .intro_screen {
-  height: 100vh;
-  margin-bottom: -10vh;
-  background-image: url(../assets/images/H.png);
-  background-size: 70rem;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 10vh;
+  margin-bottom: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,14 +113,11 @@ a {
 .parallax_wrapper .outro_screen {
   justify-content: center;
   background: #FF6666;
-  box-shadow: 0px 0px 100px #FF6666;
+  box-shadow: 0px 0px 10px #FF6666;
   transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.parallax_wrapper #address:hover {
-  scale: 1.2;
 }
 .parallax_wrapper .outro_screen span {
   position: absolute;
@@ -97,43 +138,80 @@ a {
 }
 .parallax_wrapper .parallax_group .base_layer {
   left: -6px;
-  margin-top: 18vh;
-  background-color: #FF6666;
+  top: -12vh;
+  transition: all 0.3s ease-in-out;
   transform: translateZ(-300px) scale(2);
+}
+.parallax_wrapper .parallax_group .base_layer p {
+  position: absolute;
+  top: 3em;
+  margin: 3em;
+  max-width: 80vw;
+  font-family: "Boogaloo", cursive;
+  text-align: center;
+  font-size: small;
 }
 .parallax_wrapper .parallax_group .mid_layer {
   transform: translateZ(0) scale(1);
+  margin-bottom: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .parallax_wrapper .parallax_group .section {
-  background-color: #FF6666;
-  padding: 2px 20px;
-  border-radius: 10px;
-  margin: 10vh auto;
+  cursor: default;
+  position: relative;
+  margin: 12vh;
   opacity: 0;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax_wrapper .parallax_group .section-1 {
+  transform: translateX(-20vw) scale(1.2);
+  filter: drop-shadow(0px 0px 30px #FF6666);
+}
+.parallax_wrapper .parallax_group .section-2 {
+  transform: translateX(0vw) scale(1.2);
+  filter: drop-shadow(0px 0px 30px #FF6666);
+}
+.parallax_wrapper .parallax_group .section-3 {
+  transform: translateX(20vw) scale(1.2);
+  filter: drop-shadow(0px 0px 30px #FF6666);
+}
+.parallax_wrapper .parallax_group .section p {
+  position: absolute;
+  top: 6vh;
+  font-family: "Boogaloo", cursive;
+  text-align: center;
+  font-size: x-small;
 }
 .parallax_wrapper .parallax_group .section-1.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-1 {
   opacity: 1;
-  transform: translateX(4vw) scale(1.2);
-  box-shadow: 0px 0px 10px #FF6666;
+  animation: test 0.3s both;
 }
 .parallax_wrapper .parallax_group .section-2.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-2 {
   opacity: 1;
-  transform: translateX(6vw) scale(1.2);
-  box-shadow: 0px 0px 10px #FF6666;
+  animation: test 0.6s both;
 }
 .parallax_wrapper .parallax_group .section-3.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-3 {
   opacity: 1;
-  transform: translateX(8vw) scale(1.2);
-  box-shadow: 0px 0px 10px #FF6666;
+  animation: test 0.6s both;
+}
+@keyframes test {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(90deg);
+  }
 }
 .parallax_wrapper .parallax_group .top_layer {
   transform: translateZ(210px) scale(0.3);
 }
 .parallax_wrapper #intro {
+  height: 15vh;
   z-index: 0;
 }
 .parallax_wrapper #outro {
@@ -144,13 +222,38 @@ a {
 }
 .parallax_wrapper #group_1 > .base_layer {
   height: 15vh;
-  box-shadow: 0px 0px 100px #FF6666;
 }
-.parallax_wrapper #group_1 > .mid_layer h2 {
-  font-size: large;
-  height: 10vh;
-  margin-right: 14vw;
+.parallax_wrapper #group_1 > .mid_layer {
+  height: 100vh;
 }
 .parallax_wrapper #group_2 > .top_layer {
-  height: 15vh;
+  height: 146vh;
+}
+
+nav {
+  z-index: 1;
+  background-color: #FF6666;
+  box-shadow: 0px 0px 10px #FF6666;
+  height: 12vh;
+  position: sticky;
+  padding-top: 2vh;
+  inset: 0;
+  justify-content: flex-start;
+}
+
+#navicon {
+  filter: drop-shadow(-1px 5px 0px #23272a);
+  width: 6em;
+}
+
+#discord {
+  position: absolute;
+  align-items: end;
+  scale: 0.2;
+  transition: all 0.3s ease-in-out;
+}
+
+#discord:hover {
+  filter: hue-rotate(80deg);
+  scale: 0.24;
 }/*# sourceMappingURL=styles.css.map */

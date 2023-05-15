@@ -14,7 +14,7 @@ const observer = new IntersectionObserver(entries => {
     entry.target.classList.remove(className);
   });
 }, {
-  rootMargin: '0px 0px -250px 100px'
+  rootMargin: '0px 0px -400px 100px'
 });
 
 sections.forEach(section => observer.observe(section));
