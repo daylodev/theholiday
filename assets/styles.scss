@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montez&family=Patua+One&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Sigmar&display=swap');
 
 * {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
 }
+
 // mixin properties to be reused
 @mixin align-center {
     display: flex;
@@ -13,11 +14,61 @@
 }
 
 body {
-    font-family: 'Patua One', cursive;
-    font-size: 4em;
-    color: whitesmoke;
-    background-image: url(../assets/images/logo.png);
-    background-size: cover;
+    font-family: 'Bungee', cursive;
+    font-size: 1.4em;
+    color: white;
+    background-color: #383D3B;
+    // background-image: url(../assets/images/logo1.png);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    filter: blur(80%);
+    animation: blur 2s;
+    animation-fill-mode: both;
+}
+
+.line {
+    position: relative;
+    // background-image: url(../assets/images/H.png);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+}
+
+#title {
+    position: absolute;
+    margin-right: -120px;
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: whitesmoke;
+    text-shadow: 1px 1px 0 #383D3B, 1px 2px 0 #383D3B, 1px 3px 0 #383D3B, 1px 4px 0 #383D3B,
+    1px 5px 0 #383D3B, 1px 6px 0 #383D3B, 1px 7px 0 #383D3B, 1px 8px 0 #383D3B;
+    word-spacing: 10px;
+    // left: 10vw;
+    // border: whitesmoke 2px solid;
+
+    font-size: xx-large;
+}
+
+@-webkit-keyframes blur {
+    from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        filter: blur(0%);
+        }
+      }
+
+    
+@keyframes blur {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+      filter: blur(0%);
+      }
+    }
 
     .parallax_wrapper {
         // everything inside wrapper is 100 viewport window
@@ -26,11 +77,16 @@ body {
         overflow-y: auto;
         // perspective is like angled distance from direct view
         perspective: 300px;
+        align-items: center;
 
         .intro_screen {
             height: 100vh;
-            background:rgb(53, 205, 119);
-            border-bottom: crimson 2px ridge;
+            margin-bottom: -10vh;
+            background-image: url(../assets/images/H.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
 
             // here, the mixin property is being used
             @include align-center();
@@ -38,7 +94,9 @@ body {
 
         .outro_screen {
             height: 100vh;
-            background: rgb(53, 205, 119);
+            margin-top: 20vh;
+            justify-content: center;
+            background: transparent;
             @include align-center();
         }
 
@@ -59,21 +117,22 @@ body {
             // base layer should not be put within the parallax layer, but at the same indentation
             .base_layer {
                 left: -6px;
+                margin-top: 20vh;
+                background-color: #FF6666;
+
                 // scale calculation: 1 + (Z transform value * -1) / perspective)
                 transform: translateZ(-300px) scale(2);
             }
 
-            .base_layer h2 {
-                color: gray;
-                @include align-center();
-            }
-
             .mid_layer {
                 transform: translateZ(0) scale(1);
+                @include align-center();
             }
 
             .top_layer {
                 transform: translateZ(210px) scale(0.3);
+                border-top: whitesmoke 2px solid;
+                border-bottom: whitesmoke 2px solid;
             }
         }
 
@@ -86,13 +145,24 @@ body {
         }
 
         #group_1 > .base_layer {
-            background: transparent;
+            height: 15vh;
+            box-shadow: 0px 0px 100px #FF6666;
+        }
+
+        #group_1 > .mid_layer {
         }
 
         #group_2 > .mid_layer {
-            background: transparent;
-            // background-image: url(../images/holtropic.png);
+            background: blueviolet;
+        }
+
+        #group_3 > .fold_layer {
+            @include align-center();
+            // background-image: url(../assets/images/source.gif);
             // background-size: cover;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            // filter: blur(2px);
         }
 
         // #group_2 > .top_layer {
@@ -101,4 +171,3 @@ body {
         //     background-repeat: no-repeat;
         // }
     }
-}

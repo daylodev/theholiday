@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montez&family=Patua+One&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Sigmar&display=swap");
 * {
   scroll-behavior: smooth;
   margin: 0;
@@ -6,70 +6,106 @@
 }
 
 body {
-  font-family: "Patua One", cursive;
-  font-size: 4em;
-  color: whitesmoke;
-  background-image: url(../assets/images/logo.png);
-  background-size: cover;
+  font-family: "Bungee", cursive;
+  font-size: 1.4em;
+  color: white;
+  background-color: #383D3B;
+  filter: blur(80%);
+  animation: blur 2s;
+  animation-fill-mode: both;
 }
-body .parallax_wrapper {
+
+.line {
+  position: relative;
+}
+
+#title {
+  position: absolute;
+  margin-right: -120px;
+  text-shadow: 1px 1px 0 #383D3B, 1px 2px 0 #383D3B, 1px 3px 0 #383D3B, 1px 4px 0 #383D3B, 1px 5px 0 #383D3B, 1px 6px 0 #383D3B, 1px 7px 0 #383D3B, 1px 8px 0 #383D3B;
+  word-spacing: 10px;
+  font-size: xx-large;
+}
+@keyframes blur {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0%);
+  }
+}
+.parallax_wrapper {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 300px;
+  align-items: center;
 }
-body .parallax_wrapper .intro_screen {
+.parallax_wrapper .intro_screen {
   height: 100vh;
-  background: rgb(53, 205, 119);
-  border-bottom: crimson 2px ridge;
+  margin-bottom: -10vh;
+  background-image: url(../assets/images/H.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .parallax_wrapper .outro_screen {
+.parallax_wrapper .outro_screen {
   height: 100vh;
-  background: rgb(53, 205, 119);
+  margin-top: 20vh;
+  justify-content: center;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .parallax_wrapper .parallax_group {
+.parallax_wrapper .parallax_group {
   position: relative;
   height: 100vh;
   transform-style: preserve-3d;
 }
-body .parallax_wrapper .parallax_group .parallax_layer {
+.parallax_wrapper .parallax_group .parallax_layer {
   position: absolute;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .parallax_wrapper .parallax_group .base_layer {
+.parallax_wrapper .parallax_group .base_layer {
   left: -6px;
+  margin-top: 20vh;
+  background-color: #FF6666;
   transform: translateZ(-300px) scale(2);
 }
-body .parallax_wrapper .parallax_group .base_layer h2 {
-  color: gray;
+.parallax_wrapper .parallax_group .mid_layer {
+  transform: translateZ(0) scale(1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .parallax_wrapper .parallax_group .mid_layer {
-  transform: translateZ(0) scale(1);
-}
-body .parallax_wrapper .parallax_group .top_layer {
+.parallax_wrapper .parallax_group .top_layer {
   transform: translateZ(210px) scale(0.3);
+  border-top: whitesmoke 2px solid;
+  border-bottom: whitesmoke 2px solid;
 }
-body .parallax_wrapper #intro {
+.parallax_wrapper #intro {
   z-index: 0;
 }
-body .parallax_wrapper #group_1 {
+.parallax_wrapper #group_1 {
   z-index: -1;
 }
-body .parallax_wrapper #group_1 > .base_layer {
-  background: transparent;
+.parallax_wrapper #group_1 > .base_layer {
+  height: 15vh;
+  box-shadow: 0px 0px 100px #FF6666;
 }
-body .parallax_wrapper #group_2 > .mid_layer {
-  background: transparent;
+.parallax_wrapper #group_2 > .mid_layer {
+  background: blueviolet;
+}
+.parallax_wrapper #group_3 > .fold_layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
