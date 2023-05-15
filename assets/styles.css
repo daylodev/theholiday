@@ -8,23 +8,10 @@
 body {
   font-family: "Bungee", cursive;
   font-size: 1.4em;
-  color: white;
-  background-color: #383D3B;
+  color: whitesmoke;
+  background-color: #2c2f33;
   filter: blur(80%);
-  animation: blur 2s;
-  animation-fill-mode: both;
-}
-
-.line {
-  position: relative;
-}
-
-#title {
-  position: absolute;
-  margin-right: -120px;
-  text-shadow: 1px 1px 0 #383D3B, 1px 2px 0 #383D3B, 1px 3px 0 #383D3B, 1px 4px 0 #383D3B, 1px 5px 0 #383D3B, 1px 6px 0 #383D3B, 1px 7px 0 #383D3B, 1px 8px 0 #383D3B;
-  word-spacing: 10px;
-  font-size: xx-large;
+  animation: blur 2s both;
 }
 @keyframes blur {
   from {
@@ -35,6 +22,32 @@ body {
     filter: blur(0%);
   }
 }
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  transition: all 0.3s ease-in-out;
+}
+
+.line {
+  position: relative;
+}
+
+#title {
+  position: absolute;
+  margin-right: -100px;
+  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  word-spacing: 4px;
+  font-size: xx-large;
+}
+
+#mvp {
+  position: inherit;
+  top: 24vh;
+  left: -20vw;
+  scale: 0.3;
+}
+
 .parallax_wrapper {
   height: 100vh;
   overflow-x: hidden;
@@ -46,7 +59,7 @@ body {
   height: 100vh;
   margin-bottom: -10vh;
   background-image: url(../assets/images/H.png);
-  background-size: cover;
+  background-size: 70rem;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -54,13 +67,21 @@ body {
   align-items: center;
 }
 .parallax_wrapper .outro_screen {
-  height: 100vh;
-  margin-top: 20vh;
   justify-content: center;
-  background: transparent;
+  background: #FF6666;
+  box-shadow: 0px 0px 100px #FF6666;
+  transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.parallax_wrapper #address:hover {
+  scale: 1.2;
+}
+.parallax_wrapper .outro_screen span {
+  position: absolute;
+  margin-top: 10vh;
+  font-size: small;
 }
 .parallax_wrapper .parallax_group {
   position: relative;
@@ -76,7 +97,7 @@ body {
 }
 .parallax_wrapper .parallax_group .base_layer {
   left: -6px;
-  margin-top: 20vh;
+  margin-top: 18vh;
   background-color: #FF6666;
   transform: translateZ(-300px) scale(2);
 }
@@ -86,13 +107,37 @@ body {
   justify-content: center;
   align-items: center;
 }
+.parallax_wrapper .parallax_group .section {
+  background-color: #FF6666;
+  padding: 2px 20px;
+  border-radius: 10px;
+  margin: 10vh auto;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.parallax_wrapper .parallax_group .section-1.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-1 {
+  opacity: 1;
+  transform: translateX(4vw) scale(1.2);
+  box-shadow: 0px 0px 10px #FF6666;
+}
+.parallax_wrapper .parallax_group .section-2.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-2 {
+  opacity: 1;
+  transform: translateX(6vw) scale(1.2);
+  box-shadow: 0px 0px 10px #FF6666;
+}
+.parallax_wrapper .parallax_group .section-3.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-3 {
+  opacity: 1;
+  transform: translateX(8vw) scale(1.2);
+  box-shadow: 0px 0px 10px #FF6666;
+}
 .parallax_wrapper .parallax_group .top_layer {
   transform: translateZ(210px) scale(0.3);
-  border-top: whitesmoke 2px solid;
-  border-bottom: whitesmoke 2px solid;
 }
 .parallax_wrapper #intro {
   z-index: 0;
+}
+.parallax_wrapper #outro {
+  height: 15vh;
 }
 .parallax_wrapper #group_1 {
   z-index: -1;
@@ -101,11 +146,11 @@ body {
   height: 15vh;
   box-shadow: 0px 0px 100px #FF6666;
 }
-.parallax_wrapper #group_2 > .mid_layer {
-  background: blueviolet;
+.parallax_wrapper #group_1 > .mid_layer h2 {
+  font-size: large;
+  height: 10vh;
+  margin-right: 14vw;
 }
-.parallax_wrapper #group_3 > .fold_layer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.parallax_wrapper #group_2 > .top_layer {
+  height: 15vh;
 }/*# sourceMappingURL=styles.css.map */
