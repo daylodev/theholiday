@@ -8,7 +8,6 @@
 
 body {
   font-family: "Bungee", cursive;
-  font-size: 1.4em;
   color: whitesmoke;
   background-color: #2c2f33;
   filter: blur(80%);
@@ -32,9 +31,10 @@ body {
   }
 }
 a {
+  font-size: 1.4em;
   color: whitesmoke;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
   transition: all 0.3s ease-in-out;
 }
 
@@ -51,7 +51,7 @@ a:hover {
   cursor: default;
   top: 2vh;
   left: 5em;
-  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
   font-size: x-large;
   display: flex;
   justify-content: center;
@@ -61,18 +61,17 @@ a:hover {
 small {
   position: absolute;
   cursor: default;
-  color: whitesmoke;
-  top: 6em;
+  top: 5.6em;
   left: 15em;
   text-decoration: none;
   font-size: x-small;
-  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
   transition: all 0.3s ease-in-out;
 }
 
 #subtitle {
   position: absolute;
-  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
   word-spacing: 4px;
   font-size: x-large;
   display: flex;
@@ -81,7 +80,8 @@ small {
 }
 
 #example {
-  text-shadow: 1px 1px 0 #23272a, 1px 2px 0 #23272a, 1px 3px 0 #23272a, 1px 4px 0 #23272a, 1px 5px 0 #23272a, 1px 6px 0 #23272a, 1px 7px 0 #23272a, 1px 8px 0 #23272a;
+  position: absolute;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
   word-spacing: 4px;
   font-size: x-large;
   display: flex;
@@ -91,8 +91,7 @@ small {
 
 #mvp {
   position: inherit;
-  top: 24vh;
-  left: -16em;
+  top: 9vh;
   scale: 0.3;
 }
 
@@ -145,15 +144,19 @@ small {
 .parallax_wrapper .parallax_group .base_layer p {
   position: absolute;
   top: 3em;
-  margin: 3em;
-  max-width: 80vw;
+  margin: 2em;
+  max-width: 40em;
   font-family: "Boogaloo", cursive;
   text-align: center;
-  font-size: small;
+  font-size: medium;
+}
+.parallax_wrapper .parallax_group .base_layer p:nth-child(3) {
+  top: 24em;
 }
 .parallax_wrapper .parallax_group .mid_layer {
   transform: translateZ(0) scale(1);
-  margin-bottom: 30vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,7 +164,7 @@ small {
 .parallax_wrapper .parallax_group .section {
   cursor: default;
   position: relative;
-  margin: 12vh;
+  margin: 1vh;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   display: flex;
@@ -185,7 +188,7 @@ small {
   top: 6vh;
   font-family: "Boogaloo", cursive;
   text-align: center;
-  font-size: x-small;
+  font-size: small;
 }
 .parallax_wrapper .parallax_group .section-1.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-1 {
   opacity: 1;
@@ -224,7 +227,12 @@ small {
   height: 15vh;
 }
 .parallax_wrapper #group_1 > .mid_layer {
-  height: 100vh;
+  background-color: #2c2f33;
+  height: 40vh;
+  border: 2px white solid;
+}
+.parallax_wrapper #group_2 > .mid_layer {
+  border: white 2px solid;
 }
 .parallax_wrapper #group_2 > .top_layer {
   height: 146vh;
@@ -242,18 +250,31 @@ nav {
 }
 
 #navicon {
-  filter: drop-shadow(-1px 5px 0px #23272a);
-  width: 6em;
+  filter: drop-shadow(-1px 5px 1px #23272a);
+  width: 8em;
 }
 
-#discord {
-  position: absolute;
-  align-items: end;
-  scale: 0.2;
+.community #discord {
+  position: relative;
+  filter: drop-shadow(-1px 5px 30px whitesmoke);
+  bottom: 2.2em;
+  scale: 0.06;
   transition: all 0.3s ease-in-out;
 }
 
-#discord:hover {
-  filter: hue-rotate(80deg);
-  scale: 0.24;
+.community #discord:hover {
+  transform: rotateZ(360deg);
+  filter: hue-rotate(111deg);
+  scale: 0.09;
+}
+
+.community #discord:active {
+  scale: 0.1;
+}
+
+pre {
+  cursor: default;
+  font-weight: bold;
+  font-size: larger;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
 }/*# sourceMappingURL=styles.css.map */
