@@ -40,6 +40,7 @@ a {
 
 a:hover {
   scale: 1.1;
+  color: #FF6666;
 }
 
 .line {
@@ -79,11 +80,11 @@ small {
   align-items: center;
 }
 
-#mvp {
+#book {
   position: inherit;
-  filter: drop-shadow(-1px 5px 200px whitesmoke);
-  top: 8.5vh;
-  scale: 0.3;
+  filter: drop-shadow(-1px 5px 1000px whitesmoke);
+  top: 8vh;
+  scale: 0.12;
 }
 
 .parallax_wrapper {
@@ -108,14 +109,15 @@ small {
   align-items: center;
 }
 .parallax_wrapper .outro_screen a {
-  font-size: smaller;
-  max-width: 18vw;
-  margin: 4vw;
-  text-align: center;
+  font-size: larger;
 }
-.parallax_wrapper .top_layer span {
+.parallax_wrapper .outro_screen a:hover {
+  color: whitesmoke;
+  text-shadow: -1px 1px 0 #FF6666, -1px 2px 0 #FF6666, -1px 3px 0 #FF6666, -1px 4px 0 #FF6666, -1px 5px 0 crimson;
+}
+.parallax_wrapper span {
   position: absolute;
-  bottom: 36em;
+  bottom: 0em;
   font-size: small;
   display: flex;
   justify-content: center;
@@ -135,14 +137,14 @@ small {
 }
 .parallax_wrapper .parallax_group .base_layer {
   left: -6px;
-  top: -12vh;
+  top: -16vh;
   transition: all 0.3s ease-in-out;
   transform: translateZ(-300px) scale(2);
 }
-.parallax_wrapper .parallax_group .base_layer p {
+.parallax_wrapper .parallax_group .base_layer p, .parallax_wrapper .parallax_group .mid_layer p {
   position: absolute;
   top: 3em;
-  margin: 2em;
+  margin: 3em;
   max-width: 40em;
   font-family: "Boogaloo", cursive;
   text-align: center;
@@ -172,8 +174,8 @@ small {
 .parallax_wrapper .parallax_group .section {
   cursor: default;
   position: relative;
-  top: -6vh;
-  margin: 1vh;
+  top: 1vh;
+  padding: 5rem;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   display: flex;
@@ -181,44 +183,38 @@ small {
   align-items: center;
 }
 .parallax_wrapper .parallax_group .section-1 {
-  transform: translateX(-20vw) translateY(3em) scale(1);
-  filter: drop-shadow(0px 0px 30px #FF6666);
+  left: -8rem;
+  transform: translateY(26rem);
+  background-image: url(../assets/images/mvp.png);
+  background-size: 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .parallax_wrapper .parallax_group .section-2 {
-  filter: drop-shadow(0px 0px 30px #FF6666);
-}
-.parallax_wrapper .parallax_group .section-3 {
-  transform: translateX(20vw) translateY(-3em) scale(1);
-  filter: drop-shadow(0px 0px 30px #FF6666);
+  top: 21vh;
+  padding: 90%;
 }
 .parallax_wrapper .parallax_group .section p {
   position: absolute;
   top: 6vh;
   font-family: "Boogaloo", cursive;
   text-align: center;
-  font-size: small;
+  font-size: medium;
 }
 .parallax_wrapper .parallax_group .section-1.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-1 {
   opacity: 1;
-  animation: test 0.3s both;
 }
 .parallax_wrapper .parallax_group .section-2.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-2 {
   opacity: 1;
-  animation: test 0.3s both;
 }
 .parallax_wrapper .parallax_group .section-3.in-view, .parallax_wrapper .parallax_group .sections-effect.no-js .section-3 {
   opacity: 1;
-  animation: test 0.3s both;
-}
-@keyframes test {
-  from {
-    filter: hue-rotate(0deg);
-  }
-  to {
-    filter: hue-rotate(90deg);
-  }
 }
 .parallax_wrapper .parallax_group .top_layer {
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: translateZ(210px) scale(0.3);
 }
 .parallax_wrapper #intro {
@@ -226,9 +222,7 @@ small {
   z-index: 0;
 }
 .parallax_wrapper #outro {
-  height: 4em;
-  background-color: #23272a;
-  box-shadow: 0px 0px 30px #66666e;
+  height: 10vh;
 }
 .parallax_wrapper #group_1 {
   z-index: -1;
@@ -240,15 +234,19 @@ small {
   background-color: #2c2f33;
   top: 30vh;
   height: 16vh;
-  padding-bottom: 16vh;
-  border-top: 3px #FF6666 solid;
+  padding-bottom: 32vh;
+  border-top: 4px #FF6666 double;
+}
+.parallax_wrapper #group_2 > .base_layer {
+  top: 10vh;
+  height: 10vh;
 }
 .parallax_wrapper #group_2 > .mid_layer {
-  height: 100vh;
+  height: 60vh;
 }
 .parallax_wrapper #group_2 > .top_layer {
-  position: relative;
-  height: 138vh;
+  height: 104vh;
+  left: -4vh;
 }
 
 nav {
@@ -278,9 +276,27 @@ nav {
 .community #discord:hover {
   transform: rotateZ(360deg);
   filter: hue-rotate(111deg);
-  scale: 0.09;
+  scale: 0.08;
 }
 
 .community #discord:active {
-  scale: 0.1;
+  scale: 0.09;
+}
+
+#sponsor {
+  position: absolute;
+  top: 12vh;
+  left: 3vh;
+  padding: 2rem;
+  border: #FF6666 2px double;
+  border-radius: 10px;
+  animation: hue 2s both infinite;
+}
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }/*# sourceMappingURL=styles.css.map */
