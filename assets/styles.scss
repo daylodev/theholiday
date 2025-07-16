@@ -2,356 +2,370 @@
 @import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Bungee&family=Sigmar&display=swap');
 
 * {
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 // mixin properties to be reused
 @mixin align-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
-    font-family: 'Bungee', cursive;
-    color: whitesmoke;
-    filter: blur(80%);
-    animation: blur 2s both;
+  font-family: 'Bungee', cursive;
+  color: whitesmoke;
+  filter: blur(80%);
+  animation: blur 2s both;
 }
 
 ::selection {
-    background: transparent;
+  background: transparent;
 }
 
 @-webkit-keyframes blur {
-    from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-        filter: blur(0%);
-        }
-      }
+  from {
+    opacity: 0;
+  }
 
-    
+  to {
+    opacity: 1;
+    filter: blur(0%);
+  }
+}
+
+
 @keyframes blur {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-      filter: blur(0%);
-      }
-    }
-
-  a {
-    font-size: 1.4em;
-    color: whitesmoke;
-    text-decoration: none;
-    text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-    transition: all 0.3s ease-in-out;
+  from {
+    opacity: 0;
   }
 
-  a:hover {
-    scale: 1.1;
-    color: #FF6666;
+  to {
+    opacity: 1;
+    filter: blur(0%);
   }
+}
+
+a {
+  font-size: 1.4em;
+  color: whitesmoke;
+  text-decoration: none;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  scale: 1.1;
+  color: #FF6666;
+}
 
 .line {
-    position: relative;
+  position: relative;
 }
 
 #title {
-    position: absolute;
-    cursor: default;
-    top: 2.1vh;
-    left: 5em;
-    text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-    font-size: x-large;
-    @include align-center();
+  position: absolute;
+  cursor: default;
+  top: 2.1vh;
+  left: 5em;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  font-size: x-large;
+  @include align-center();
 }
 
 small {
-    position: absolute;
-    cursor: default;
-    top: 5.4em;
-    left: 15em;
-    text-decoration: none;
-    font-size: x-small;
-    text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-    transition: all 0.3s ease-in-out;
-  }
+  position: absolute;
+  cursor: default;
+  top: 3.2rem;
+  left: 11em;
+  text-decoration: none;
+  font-size: small;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
+}
 
 #community {
-    position: absolute;
-    text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-    word-spacing: 4px;
-    font-size: x-large;
-    @include align-center();
+  position: absolute;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  word-spacing: 4px;
+  font-size: x-large;
+  @include align-center();
 }
 
 #book {
-    position: inherit;
-    display: none;
-    filter: drop-shadow(-1px 5px 1000px whitesmoke);
-    // top: 8vh;
-    scale: 0.12;
+  position: inherit;
+  display: none;
+  filter: drop-shadow(-1px 5px 1000px whitesmoke);
+  // top: 18vh;
+  scale: 0.12;
 }
 
-    .parallax_wrapper {
-        // everything inside wrapper is 100 viewport window
-        height: 100vh;
-        overflow-x: hidden;
-        overflow-y: auto;
-        // perspective is like angled distance from direct view
-        perspective: 300px;
-        align-items: center;
+.parallax_wrapper {
+  // everything inside wrapper is 100 viewport window
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  // perspective is like angled distance from direct view
+  perspective: 300px;
+  align-items: center;
 
-        .intro_screen {
-            height: 10vh;
-            margin-bottom: 10vh;
-            // background properties to flex for device, includes the align center mixin
-
-
-            // here, the mixin property is being used
-            @include align-center();
-        }
-
-        .outro_screen {
-            justify-content: center;
-            transition: all 0.3s ease-in-out;
-            @include align-center();
-        }
-
-        .outro_screen a {
-          font-size: larger;
-        }
-
-        .outro_screen a:hover {
-          color: whitesmoke;
-          text-shadow: -1px 1px 0 #FF6666, -1px 2px 0 #FF6666, -1px 3px 0 #FF6666, -1px 4px 0 #FF6666, -1px 5px 0 crimson;
-        }
-
-        span {
-          position: absolute;
-          bottom: 0em;
-          font-size: small;
-          @include align-center();
-        }
-
-        .parallax_group {
-            position: relative;
-            height: 100vh;
-            // when given depth, the element keeps its position
-            transform-style: preserve-3d;
-
-            .parallax_layer {
-                position: absolute;
-                // inset takes all four properties of top, right, left, bottom in one declaration
-                inset: 0;
-                @include align-center();
-            }
-
-            // base layer should not be put within the parallax layer, but at the same indentation
-            .base_layer {
-                top: -30vh;
-                transition: all 0.3s ease-in-out;
-
-                // scale calculation: 1 + (Z transform value * -1) / perspective)
-                transform: translateZ(-300px) scale(2);
-            }
-
-            .base_layer p, .mid_layer p {
-                position: absolute;
-                top: 3em;
-                margin: 3em;
-                max-width: 40em;
-                font-family: 'Boogaloo', cursive;
-                text-align: center;
-                font-size: medium;
-            }
-
-            .base_layer h2 {
-              position: absolute;
-              text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-              word-spacing: 4px;
-              font-size: x-large;
-              @include align-center();
-            }
-
-            .base_layer p:nth-child(4) {
-              top: 20em;
-            }
-
-            .base_layer h2:nth-child(3) {
-              top: 12em;
-            }
-
-            .mid_layer {
-                transform: translateZ(0) scale(1);
-                @include align-center();
-            }
-
-            .section {
-                cursor: default;
-                position: relative;
-                top: 1vh;
-                padding: 5rem;
-                opacity: 0;
-                transition: all 0.3s ease-in-out;
-                @include align-center();
-              }
-
-            .section-1 {
-                left: -8rem;
-                transform: translateY(26rem);
-                background-image: url(../assets/images/mvp.png);
-                background-size: 4rem;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            .section-2 {
-              top: 21vh;
-              padding: 90%;
-            }
-
-            .section-3 {
-            }
-
-            .section p {
-                position: absolute;
-                top: 6vh;
-                font-family: 'Boogaloo', cursive;
-                text-align: center;
-                font-size: medium;
-            }
-
-              
-              .section.in-view, .sections-effect.no-js .section {
-              }
-              
-              .section-1.in-view, .sections-effect.no-js .section-1 {
-                opacity: 1;
-              }
-              
-              .section-2.in-view, .sections-effect.no-js .section-2 {
-                opacity: 1;
-              }
-              
-              .section-3.in-view, .sections-effect.no-js .section-3 {
-                opacity: 1;
-              }
-
-            .top_layer {
-              justify-content: center;
-              @include align-center();
-              transform: translateZ(210px) scale(0.3);
-            }
-        }
-
-        #intro {
-            height: 15vh;
-            z-index: 0;
-        }
-        
-        #outro {
-            height: 10vh;
-        }
-
-        #group_1 {
-            z-index: -1;
-        }
-
-        #group_1 > .base_layer {
-            height: 15vh;
-        }
-
-        #group_1 > .mid_layer {
-            background-color: #2c2f33;
-            top: 20vh;
-            height: 16vh;
-            padding-bottom: 32vh;
-            border-top: 4px #FF6666 double;
-        }
+  .intro_screen {
+    height: 10vh;
+    margin-bottom: 1vh;
+    // background properties to flex for device, includes the align center mixin
 
 
-        #group_2 > .base_layer {
-          top: 10vh;
-          height: 10vh;
-        }
+    // here, the mixin property is being used
+    @include align-center();
+  }
 
-        #group_2 > .mid_layer {
-            height: 60vh;
-        }
+  .outro_screen {
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    @include align-center();
+  }
 
-        #group_2 > .top_layer {
-          height: 104vh;
-          left: -4vh;
-        }
+  .outro_screen a {
+    font-size: larger;
+  }
+
+  .outro_screen a:hover {
+    color: whitesmoke;
+    text-shadow: -1px 1px 0 #FF6666, -1px 2px 0 #FF6666, -1px 3px 0 #FF6666, -1px 4px 0 #FF6666, -1px 5px 0 crimson;
+  }
+
+  span {
+    position: absolute;
+    bottom: 0em;
+    font-size: small;
+    @include align-center();
+  }
+
+  .parallax_group {
+    position: relative;
+    height: 100vh;
+    // when given depth, the element keeps its position
+    transform-style: preserve-3d;
+
+    .parallax_layer {
+      position: absolute;
+      // inset takes all four properties of top, right, left, bottom in one declaration
+      inset: 0;
+      @include align-center();
+    }
+
+    // base layer should not be put within the parallax layer, but at the same indentation
+    .base_layer {
+      top: -30vh;
+      transition: all 0.3s ease-in-out;
+
+      // scale calculation: 1 + (Z transform value * -1) / perspective)
+      transform: translateZ(-300px) scale(2);
+    }
+
+    .base_layer p,
+    .mid_layer p {
+      position: absolute;
+      color: #2c2f33;
+      top: 3em;
+      margin: 3em;
+      max-width: 40em;
+      font-family: 'Boogaloo', cursive;
+      text-align: center;
+      font-size: medium;
+    }
+
+    h2 {
+      position: absolute;
+      text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+      word-spacing: 4px;
+      font-size: x-large;
+      @include align-center();
+    }
+
+    .base_layer p:nth-child(4) {
+      top: 20em;
+    }
+
+    .base_layer h2:nth-child(3) {
+      top: 2em;
+    }
+
+    .mid_layer {
+      transform: translateZ(0) scale(1);
+      @include align-center();
+    }
+
+    .section {
+      cursor: default;
+      position: relative;
+      top: 1vh;
+      padding: 5rem;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      @include align-center();
+    }
+
+    .section-1 {
+      left: -8rem;
+      transform: translateY(26rem);
+      background-image: url(../assets/images/mvp.png);
+      background-size: 4rem;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .section-2 {
+      top: 21vh;
+      padding: 90%;
+    }
+
+    .section-3 {}
+
+    .section p {
+      position: absolute;
+      top: 6vh;
+      font-family: 'Boogaloo', cursive;
+      text-align: center;
+      font-size: medium;
     }
 
 
-    nav {
-        z-index: 1;
-        background-color: #FF6666;
-        box-shadow: 0px 0px 10px #FF6666;
-        height: 12vh;
-        position: fixed;
-        inset: 0;
-        justify-content: flex-start;
-      }
+    .section.in-view,
+    .sections-effect.no-js .section {}
 
-      #navicon {
-        filter: drop-shadow(-1px 5px 1px #23272a);
-        width: 8em;
-      }
+    .section-1.in-view,
+    .sections-effect.no-js .section-1 {
+      opacity: 1;
+    }
 
-      .community #discord {
-        position: relative;
-        filter: drop-shadow(-1px 5px 30px whitesmoke);
-        bottom: 2.3em;
-        scale: 0.06;
-        transition: all 0.3s ease-in-out;
-      }
+    .section-2.in-view,
+    .sections-effect.no-js .section-2 {
+      opacity: 1;
+    }
 
-      .community #discord:hover {
-        transform: rotateZ(360deg);
-        filter: hue-rotate(111deg);
-        scale: 0.08;
-      }
+    .section-3.in-view,
+    .sections-effect.no-js .section-3 {
+      opacity: 1;
+    }
 
-      .community #discord:active {
-        scale: 0.09;
-      }
+    .top_layer {
+      justify-content: center;
+      @include align-center();
+      transform: translateZ(210px) scale(0.3);
+    }
+  }
 
-      #sponsor {
-        position: absolute;
-        top: 12vh;
-        left: 3vh;
-        padding: 2rem;
-        border: #FF6666 2px double;
-        border-radius: 10px;
-        animation: hue 2s both infinite;
-      }
+  #intro {
+    height: 15vh;
+    z-index: 0;
+  }
 
-      @-webkit-keyframes hue {
-        from {
-            filter: hue-rotate(0deg);
-          }
-          to {
-            filter: hue-rotate(360deg);
-            }
-          }
-    
-        
-    @keyframes hue {
-        from {
-          filter: hue-rotate(0deg);
-        }
-        to {
-          filter: hue-rotate(360deg);
-          }
-        }
+  #outro {
+    height: 10vh;
+  }
+
+  #group_1 {
+    z-index: -1;
+  }
+
+  #group_1>.base_layer {
+    height: 25vh;
+    background-image: url(../assets/images/office.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  #group_1>.mid_layer {
+    background-color: #FF6666;
+    box-shadow: 0px 0px 10px #FF6666;
+    top: 20vh;
+    height: 16vh;
+    padding-bottom: 10vh;
+  }
+
+
+  #group_2>.base_layer {
+    top: 10vh;
+    height: 12vh;
+  }
+
+  #group_2>.mid_layer {
+    height: 60vh;
+  }
+
+  #group_2>.top_layer {
+    height: 104vh;
+    left: -4vh;
+  }
+}
+
+
+nav {
+  z-index: 1;
+  background-color: #FF6666;
+  box-shadow: 0px 0px 10px #FF6666;
+  height: 12vh;
+  position: fixed;
+  inset: 0;
+  justify-content: flex-start;
+}
+
+#navicon {
+  filter: drop-shadow(-1px 5px 1px #23272a);
+  width: 8em;
+  margin-top: 1vh;
+}
+
+.community #discord {
+  position: relative;
+  filter: drop-shadow(-1px 5px 30px whitesmoke);
+  bottom: 2.3em;
+  scale: 0.11;
+  transition: all 0.4s ease-in-out;
+}
+
+.community #discord:hover {
+  transform: rotateZ(360deg);
+  filter: hue-rotate(111deg);
+  filter: drop-shadow(-1px 5px 200px whitesmoke);
+  scale: 0.14;
+}
+
+.community #discord:active {
+  scale: 0.10;
+}
+
+#sponsor {
+  position: absolute;
+  top: 12vh;
+  left: 3vh;
+  padding: 2rem;
+  box-shadow: 0px -100px 500px #FF6666;
+  // border: #FF6666 2px double;
+  border-radius: 10px;
+  animation: hue 3s both infinite;
+}
+
+@-webkit-keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
