@@ -111,7 +111,7 @@ small {
   perspective: 300px;
   align-items: center;
   background-color: #23272a;
-  box-shadow: inset 0 -300px 60px -300px whitesmoke;
+  // box-shadow: inset 0 -500px 20vh -500px whitesmoke;
   .intro_screen {
     height: 10vh;
     margin-bottom: 1vh;
@@ -141,8 +141,9 @@ small {
   }
 
   span {
-    position: absolute;
-    top: -1vh;
+    position: inherit;
+    display: flex;
+    top: -6vh;
     font-size: small;
     @include align-center();
   }
@@ -263,12 +264,12 @@ small {
   }
 
   #intro {
-    height: 15vh;
+    height: 25vh;
     z-index: 0;
   }
 
   #outro {
-    height: 10vh;
+    height: 100%;
   }
 
   #group_1 {
@@ -276,10 +277,11 @@ small {
   }
 
   #group_1>.base_layer {
-    height: 80vh;
+    height: 102vh;
     background-image: url(../assets/images/office.jpg);
     background-size: cover;
     background-position: center;
+    filter: blur(1px);
     box-shadow: inset 0 -300px 200px -120px #23272a;
   }
 
@@ -302,8 +304,12 @@ small {
   }
 
   #group_2>.top_layer {
-    height: 110vh;
+    height: 290vh;
     left: -4vw;
+    background-image: url(../assets/images/mvp.png);
+    background-size: 10vh;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -322,7 +328,7 @@ nav {
 #navicon {
   filter: drop-shadow(-1px 5px 1px #23272a);
   width: 8em;
-  margin-top: 1vh;
+  margin-top: 1.1vh;
 }
 
 .community #discord {
