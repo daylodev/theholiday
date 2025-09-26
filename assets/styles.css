@@ -69,16 +69,6 @@ small {
   transition: all 0.3s ease-in-out;
 }
 
-#community {
-  position: absolute;
-  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-  word-spacing: 4px;
-  font-size: x-large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #book {
   position: inherit;
   display: none;
@@ -148,8 +138,18 @@ small {
 .parallax_wrapper .parallax_group .mid_layer p {
   position: absolute;
   color: smokewhite;
-  top: 2em;
-  margin: 4em;
+  top: 3em;
+  margin: 2em;
+  max-width: 40em;
+  font-family: "Boogaloo", cursive;
+  text-align: center;
+  font-size: large;
+}
+.parallax_wrapper .parallax_group .top_layer p {
+  position: relative;
+  color: smokewhite;
+  top: 6em;
+  margin: 2em;
   max-width: 40em;
   font-family: "Boogaloo", cursive;
   text-align: center;
@@ -237,7 +237,7 @@ small {
 }
 .parallax_wrapper #group_1 > .base_layer {
   height: 102vh;
-  background-image: url(../assets/images/office.jpg);
+  background-image: url(../assets/images/example.jpeg);
   background-size: cover;
   background-position: center;
   filter: blur(1px);
@@ -254,13 +254,8 @@ small {
   top: 32vh;
   height: 12vh;
 }
-.parallax_wrapper #group_2 > .mid_layer {
-  height: 81vh;
-}
 .parallax_wrapper #group_2 > .top_layer {
-  height: 290vh;
-  left: -4vw;
-  background-image: url(../assets/images/mvp.png);
+  height: 360vh;
   background-size: 10vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -268,8 +263,8 @@ small {
 
 nav {
   z-index: 1;
-  background-color: #FF6666;
-  box-shadow: 0px 0px 20px #FF6666;
+  background-color: #23272a;
+  box-shadow: 0px 0px 100px whitesmoke;
   filter: drop-shadow(0px 0px 10px #23272a);
   height: 12vh;
   position: fixed;
@@ -278,7 +273,6 @@ nav {
 }
 
 #navicon {
-  filter: drop-shadow(-1px 5px 1px #23272a);
   width: 8em;
   margin-top: 1.1vh;
 }
@@ -287,18 +281,18 @@ nav {
   position: relative;
   filter: drop-shadow(-1px -5px 30px #23272a);
   bottom: 5.2vh;
-  scale: 0.19;
+  scale: 0.1;
   transition: all 0.3s ease-in-out;
 }
 
 .community #discord:hover {
   transform: rotateZ(360deg);
   filter: drop-shadow(-1px 5px 300px #23272a);
-  scale: 0.21;
+  scale: 0.11;
 }
 
 .community #discord:active {
-  scale: 0.18;
+  scale: 0.1;
   filter: drop-shadow(-1px 5px 300px whitesmoke);
 }
 
