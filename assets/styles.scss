@@ -16,7 +16,7 @@
 
 body {
   font-family: 'Bungee', cursive;
-  color: whitesmoke;
+  color: black;
   filter: blur(80%);
   animation: blur 2s both;
 }
@@ -48,16 +48,13 @@ body {
   }
 }
 
-// a {
-//   font-size: 1.4em;
-//   color: whitesmoke;
-//   text-decoration: none;
-//   text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-//   transition: all 0.3s ease-in-out;
-// }
-
-a #discord {
-
+a {
+  // position: relative;
+  font-size: 1.2em;
+  color: whitesmoke;
+  text-decoration: none;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
 }
 
 .line {
@@ -67,6 +64,7 @@ a #discord {
 #title {
   position: absolute;
   cursor: default;
+  color: whitesmoke;
   top: 2.0vh;
   left: 5em;
   text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
@@ -77,6 +75,7 @@ a #discord {
 small {
   position: absolute;
   cursor: default;
+  color: whitesmoke;
   top: 3.2rem;
   left: 11.4em;
   text-decoration: none;
@@ -97,7 +96,7 @@ small {
   position: inherit;
   display: none;
   filter: drop-shadow(-1px 5px 1000px whitesmoke);
-  top: 48vh;
+  top: 38vh;
   scale: 0.12;
 }
 
@@ -109,11 +108,11 @@ small {
   // perspective is like angled distance from direct view
   perspective: 300px;
   align-items: center;
-  background-color: #23272a;
-  // box-shadow: inset 0 -500px 20vh -500px whitesmoke;
+  background-color: #0490fa;
+  box-shadow: inset 0 -500px 5vh -500px whitesmoke;
   .intro_screen {
     height: 10vh;
-    margin-bottom: 1vh;
+    margin-bottom: 0vh;
     // background properties to flex for device, includes the align center mixin
 
 
@@ -129,16 +128,6 @@ small {
     @include align-center();
   }
 
-  .outro_screen a {
-    font-size: larger;
-    margin-bottom: 20vh;
-  }
-
-  a {
-    text-shadow: none;
-    text-decoration: none;
-  }
-
   a:hover {
     color: whitesmoke;
     // text-shadow: -1px 1px 0 #FF6666, -1px 2px 0 #FF6666, -1px 3px 0 #FF6666, -1px 4px 0 #FF6666, -1px 5px 0 crimson;
@@ -149,11 +138,19 @@ small {
   }
 
   span {
-    position: inherit;
-    display: flex;
-    top: -6vh;
-    font-size: small;
+    // position: relative;
+    // display: flex;
+    background-color: #0490fa;
+    box-shadow: (20px 1vh 20px whitesmoke);
+    padding: 2vh;
+    font-size: large;
     @include align-center();
+    transition: all 0.3s ease-in-out;
+  }
+
+  span:hover {
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .parallax_group {
@@ -175,37 +172,30 @@ small {
       transition: all 0.3s ease-in-out;
 
       // scale calculation: 1 + (Z transform value * -1) / perspective)
-      transform: translateZ(-300px) scale(2);
+      transform: translateZ(-300px) scale(2.1);
     }
 
-    .base_layer p,
-    .mid_layer p,
-    .top_layer p {
+    p {
       position: relative;
-      color: smokewhite;
-      top: 6rem;
-      margin: 5vw;
-      max-width: 40em;
-      // text-wrap: balance;
+      top: 4rem;
+      margin: 10vw;
+      max-width: 70vw;
+      text-wrap: balance;
       font-family: 'Boogaloo', cursive;
       text-align: center;
-      font-size: x-large;
-    }
-
-    .base_layer h2,
-    .top_layer h2 {
-      position: absolute;
-      text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
-      word-spacing: 4px;
-      font-size: x-large;
+      font-size: large;
       @include align-center();
     }
 
-    h2:hover {
-      color: #0490fa;
-      scale: 1.1;
-      transition: all 0.1s ease-in-out;
+    h2 {
+      // position: relative;
+      color: whitesmoke;
+      // left: 18vh;
       text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+      word-spacing: 4px;
+      text-align: center;
+      font-size: x-large;
+      @include align-center();
     }
 
     .base_layer p:nth-child(4) {
@@ -213,7 +203,7 @@ small {
     }
 
     .base_layer h2:nth-child(3) {
-      top: 2em;
+      top: 4em;
     }
 
     .mid_layer {
@@ -277,7 +267,7 @@ small {
     .top_layer {
       justify-content: center;
       @include align-center();
-      transform: translateZ(210px) scale(0.3);
+      transform: translateZ(210px) scale(0.31);
     }
   }
 
@@ -287,19 +277,21 @@ small {
   }
 
   #outro {
-    height: 100%;
+    height: 10%;
   }
 
   // .spacer {
   //   height: 100%;
+  //   position: relative;
   //   mask-image: linear-gradient(to top, black 50%, transparent 90%);
-  //   background-size: cover;
+  //   background-size: 80vh;
   //   background-position: center;
+  //   background-repeat: no-repeat;
   //   top: 0;
   //   left: 0;
   //   right: 0;
   //   bottom: 0;
-  //   background-image: url(../assets/images/example.jpeg);
+  //   background-image: url(../assets/images/holtropic.png);
   // }
 
   #group_1 {
@@ -308,16 +300,14 @@ small {
 
   #group_1>.base_layer {
     height: 100vh;
-    // background-image: url(../assets/images/office.jpg);
-    // background-image: url(../assets/images/example.jpeg);
-    // box-shadow: inset 0 -300px 200px 120px #0490fa;
+    box-shadow: inset 0 -300px 200px 120px #0490fa;
   }
 
     #group_1>.base_layer::after {
     // webkit is no longer needed because mask-image is now supported in all major browsers
     // -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
     content: "";
-    mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
+    mask-image: linear-gradient(to bottom, #0490fa 50%, transparent 90%);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -326,34 +316,29 @@ small {
     right: 0;
     bottom: 0;
     background-image: url(../assets/images/office.jpg);
-        filter: blur(1px);
+        filter: blur(2px);
     }
 
   #group_1>.mid_layer {
     background-color: transparent;
     box-shadow: 0px -1px 200vh whitesmoke;
-    filter: brightness(1.1);
-    top: 62vh;
+    top: 65vh;
     height: 12vh;
   }
 
 
   #group_2>.base_layer {
-    top: 32vh;
-    height: 12vh;
-    background-image: url(../assets/images/left.png);
-    background-size: 24vh;
-    background-position: 17%;
-    background-repeat: no-repeat;
+    top: 36vh;
+    height: 16vh;
   }
 
-  // #group_2>.mid_layer {
-  //   height: 81vh;
-  // }
+  #group_2>.mid_layer {
+    height: 60vh;
+  }
 
   #group_2>.top_layer {
     // height was originally 360vh
-    height: 400vh;
+    // height: 380vh;
     // background-image: url(../assets/images/left.png);
     // background-size: 24vh;
     // background-position: center;
@@ -364,55 +349,56 @@ small {
 
 @media screen and (max-width: 600px) {
   nav {
-  display: none;
+  background-color: transparent;
+
 }
 }
 
 nav {
   z-index: 1;
-  // background-color: #23272a;
-  // box-shadow: 0px 0px 100px whitesmoke;
-  // filter: drop-shadow(0px 0px 10px #23272a);
+  background-color: transparent;
+  // box-shadow: 0px 0px 4px whitesmoke;
+  filter: drop-shadow(0px 0px 10px #23272a);
   height: 12vh;
   position: fixed;
   inset: 0;
-  justify-content: flex-start;
+  // justify-content: flex-start;
 }
 
 #navicon {
-  width: 8em;
-  margin-top: 1.1vh;
+  width: 5em;
+  margin-top: 1.5vh;
 }
 
-.community #discord {
-  position: relative;
-  filter: drop-shadow(-1px -5px 30px #23272a);
-  bottom: 5.2vh;
-  scale: 0.1;
-  transition: all 0.3s ease-in-out;
-}
+// .community #discord {
+//   position: relative;
+//   filter: drop-shadow(-1px -5px 30px #23272a);
+//   bottom: 5.2vh;
+//   scale: 0.1;
+//   transition: all 0.3s ease-in-out;
+// }
 
-.community #discord:hover {
-  transform: rotateZ(360deg);
-  filter: drop-shadow(-1px 5px 300px #23272a);
-  scale: 0.11;
-}
+// .community #discord:hover {
+//   transform: rotateZ(360deg);
+//   filter: drop-shadow(-1px 5px 300px #23272a);
+//   scale: 0.11;
+// }
 
-.community #discord:active {
-  scale: 0.1;
-  filter: drop-shadow(-1px 5px 300px whitesmoke);
-}
+// .community #discord:active {
+//   scale: 0.1;
+//   filter: drop-shadow(-1px 5px 300px whitesmoke);
+// }
 
-#sponsor {
-  position: absolute;
-  top: 12vh;
-  left: 3vh;
-  padding: 2rem;
-  box-shadow: 0px -100px 500px #FF6666;
-  // border: #FF6666 2px double;
-  border-radius: 10px;
-  animation: hue 3s both infinite;
-}
+// #sponsor {
+//   position: absolute;
+//   top: 12vh;
+//   left: 3vh;
+//   padding: 2rem;
+//   box-shadow: 0px -100px 500px #FF6666;
+//   border: #FF6666 2px double;
+//   border-radius: 10px;
+//   animation: hue 3s both infinite;
+// }
 
 @-webkit-keyframes hue {
   from {

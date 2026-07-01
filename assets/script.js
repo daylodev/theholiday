@@ -1,4 +1,3 @@
-
 function myFunction() {
     var copyText = document.getElementById("address").title;
     // document.addEventListener('copy', function(event) {
@@ -7,7 +6,7 @@ function myFunction() {
     //   document.removeEventListener('copy', handler, true);
     // }, true);
     // document.execCommand('copy');
-    document.getElementById('notice').innerHTML = "Loading...";
+    document.getElementById('notice').innerHTML = "Sending invite...";
   }
 
   document.getElementById('address').addEventListener('click', myFunction);
