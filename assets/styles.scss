@@ -72,7 +72,7 @@ a {
   @include align-center();
 }
 
-small {
+small#first {
   position: absolute;
   cursor: default;
   color: whitesmoke;
@@ -80,6 +80,32 @@ small {
   left: 11.4em;
   text-decoration: none;
   font-size: small;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
+}
+
+small#second {
+  position: relative;
+  cursor: default;
+  color: whitesmoke;
+  top: -0.2rem;
+  left: 0.2em;
+  text-decoration: none;
+  font-size: small;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
+}
+
+
+small#third {
+  position: relative;
+  cursor: default;
+  color: whitesmoke;
+  top: 70vh;
+  left: 7em;
+  text-decoration: none;
+  font-size: small;
+  white-space: nowrap;
   text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
   transition: all 0.3s ease-in-out;
 }
@@ -93,14 +119,18 @@ small {
 // }
 
 #book {
-  position: inherit;
-  display: none;
-  filter: drop-shadow(-1px 5px 1000px whitesmoke);
-  top: 38vh;
-  scale: 0.12;
+  position: relative;
+  top: 70vh;
+  scale: 0.4;
+  left: 6vw;
+  z-index: -1;
+  // SNAP ON LOWEST ELEMENT
+  scroll-snap-align: center;
+  white-space: nowrap;
 }
 
 .parallax_wrapper {
+  scroll-snap-type: block proximity;
   // everything inside wrapper is 100 viewport window
   height: 100vh;
   overflow-x: hidden;
@@ -138,19 +168,18 @@ small {
   }
 
   span {
-    // position: relative;
-    // display: flex;
+    position: relative;
+    display: flex;
     background-color: #0490fa;
-    box-shadow: (20px 1vh 20px whitesmoke);
-    padding: 2vh;
+    box-shadow: (20px 0vh 20px #23272a);
+    padding: 4vh;
     font-size: large;
     @include align-center();
     transition: all 0.3s ease-in-out;
   }
 
   span:hover {
-    background-color: transparent;
-    box-shadow: none;
+    box-shadow: (20px 0vh 20px whitesmoke);
   }
 
   .parallax_group {
@@ -179,11 +208,11 @@ small {
       position: relative;
       top: 4rem;
       margin: 10vw;
-      max-width: 70vw;
+      max-width: 74vw;
       text-wrap: balance;
       font-family: 'Boogaloo', cursive;
       text-align: center;
-      font-size: large;
+      font-size: larger;
       @include align-center();
     }
 
@@ -307,7 +336,7 @@ small {
     // webkit is no longer needed because mask-image is now supported in all major browsers
     // -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
     content: "";
-    mask-image: linear-gradient(to bottom, #0490fa 50%, transparent 90%);
+    mask-image: linear-gradient(to bottom, #0490fa 60%, transparent 100%);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -328,12 +357,13 @@ small {
 
 
   #group_2>.base_layer {
-    top: 36vh;
-    height: 16vh;
+    top: 26vh;
+    height: 36vh;
   }
 
   #group_2>.mid_layer {
-    height: 60vh;
+    top: 10vh;
+    height: 50vh;
   }
 
   #group_2>.top_layer {

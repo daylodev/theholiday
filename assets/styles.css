@@ -54,7 +54,7 @@ a {
   align-items: center;
 }
 
-small {
+small#first {
   position: absolute;
   cursor: default;
   color: whitesmoke;
@@ -66,15 +66,43 @@ small {
   transition: all 0.3s ease-in-out;
 }
 
+small#second {
+  position: relative;
+  cursor: default;
+  color: whitesmoke;
+  top: -0.2rem;
+  left: 0.2em;
+  text-decoration: none;
+  font-size: small;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
+}
+
+small#third {
+  position: relative;
+  cursor: default;
+  color: whitesmoke;
+  top: 70vh;
+  left: 7em;
+  text-decoration: none;
+  font-size: small;
+  white-space: nowrap;
+  text-shadow: -1px 1px 0 #23272a, -1px 2px 0 #23272a, -1px 3px 0 #23272a, -1px 4px 0 #23272a, -1px 5px 0 #1e2124;
+  transition: all 0.3s ease-in-out;
+}
+
 #book {
-  position: inherit;
-  display: none;
-  filter: drop-shadow(-1px 5px 1000px whitesmoke);
-  top: 38vh;
-  scale: 0.12;
+  position: relative;
+  top: 70vh;
+  scale: 0.4;
+  left: 6vw;
+  z-index: -1;
+  scroll-snap-align: center;
+  white-space: nowrap;
 }
 
 .parallax_wrapper {
+  scroll-snap-type: block proximity;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -105,9 +133,11 @@ small {
   color: whitesmoke;
 }
 .parallax_wrapper span {
+  position: relative;
+  display: flex;
   background-color: #0490fa;
-  box-shadow: 20px 1vh 20px whitesmoke;
-  padding: 2vh;
+  box-shadow: 20px 0vh 20px #23272a;
+  padding: 4vh;
   font-size: large;
   display: flex;
   justify-content: center;
@@ -115,8 +145,7 @@ small {
   transition: all 0.3s ease-in-out;
 }
 .parallax_wrapper span:hover {
-  background-color: transparent;
-  box-shadow: none;
+  box-shadow: 20px 0vh 20px whitesmoke;
 }
 .parallax_wrapper .parallax_group {
   position: relative;
@@ -139,11 +168,11 @@ small {
   position: relative;
   top: 4rem;
   margin: 10vw;
-  max-width: 70vw;
+  max-width: 74vw;
   text-wrap: balance;
   font-family: "Boogaloo", cursive;
   text-align: center;
-  font-size: large;
+  font-size: larger;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,8 +264,8 @@ small {
 }
 .parallax_wrapper #group_1 > .base_layer::after {
   content: "";
-  -webkit-mask-image: linear-gradient(to bottom, #0490fa 50%, transparent 90%);
-          mask-image: linear-gradient(to bottom, #0490fa 50%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to bottom, #0490fa 60%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #0490fa 60%, transparent 100%);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -254,11 +283,12 @@ small {
   height: 12vh;
 }
 .parallax_wrapper #group_2 > .base_layer {
-  top: 36vh;
-  height: 16vh;
+  top: 26vh;
+  height: 36vh;
 }
 .parallax_wrapper #group_2 > .mid_layer {
-  height: 60vh;
+  top: 10vh;
+  height: 50vh;
 }
 @media screen and (max-width: 600px) {
   nav {
